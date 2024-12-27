@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "CSharp": {
+    "OrdersApi": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger", // for Swagger UI

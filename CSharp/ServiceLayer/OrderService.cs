@@ -1,8 +1,8 @@
-﻿using CSharp.Models;
+﻿using OrdersApi.Models;
 using System.Collections.Generic;
-using CSharp.Data;
+using OrdersApi.Data;
 
-namespace CSharp.Services
+namespace OrdersApi.Services
 {
     public class OrderService : IOrderService
     {
@@ -38,6 +38,15 @@ namespace CSharp.Services
 
         public bool CancelOrder(int id)
         {
+            var order = _orderDataStore.GetById(id);
+            if (order != null) {
+                if(order.Status != "Pending")
+                {
+                    return false;
+                }
+            }
+
+
             return _orderDataStore.Delete(id);
         }
 

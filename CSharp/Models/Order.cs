@@ -1,4 +1,4 @@
-﻿namespace CSharp.Models
+﻿namespace OrdersApi.Models
 {
     public class Order
     {

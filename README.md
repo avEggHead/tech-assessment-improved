@@ -1,26 +1,77 @@
-# Hey developers, engineers, hackers. 
-**This is important!** We want to respect your valuable time so **_PLEASE_** timebox this exercise.
+# Orders API
 
-Your current mission, should you choose to accept it, is to take a few (no more than two) hours to build an Orders REST API endpoint. We have created some starter templates for a few languages but you don't need to use them if you would prefer to roll your own.
+A simple REST API for managing orders, built with .NET Core 3.1.
 
-## What we would like to see from this exercise:
-* Create order endpoint
-* List all orders by customer endpoint
-* Update order endpoint
-* Cancel order endpoint
-* Tests to prove your code works as expected
+## Table of Contents
+1. [Project Setup](#project-setup)
+2. [Running Locally](#running-locally)
+3. [API Endpoints](#api-endpoints)
+4. [Testing](#testing)
+5. [Technologies Used](#technologies-used)
+6. [License](#license)
 
-**Currently supported languages templates:** C#, Go, Node.JS, Python
+## Project Setup
 
-_We are open to other languages if you feel more comfortable in them. We have expertises in **Java**, **Kotlin**, and a few others._
+1. Clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/yourusername/OrdersApi.git
+    cd OrdersApi
+    ```
 
-If you don't see your language of preference on the list of languages above, **_please reach out_**. We are happy to discuss other langages as well.
+2. Install the required NuGet packages:
+    ```bash
+    dotnet restore
+    ```
 
-## How to interact with this activity:
-1. Fork this repo
-2. Complete exercise with a language listed above (assuming you haven't chosen another, hipper language and discussed it with us)
-3. Provide a link to the completed exercise to Jenny Hove [jenny.hove@sogeti.com]
-4. Receive personalized code review/feedback session from our technical team
+3. Build the project:
+    ```bash
+    dotnet build
+    ```
 
+## Running Locally
 
+### Prerequisites
 
+- .NET Core 3.1 SDK or later
+- Visual Studio Code (or any code editor of your choice) with .NET Core support
+- Postman (for testing endpoints) or any HTTP client tool
+
+### Running the API
+
+1. Navigate to the project folder in your terminal (where `OrdersApi.csproj` is located).
+2. Run the application using the following command:
+    ```bash
+    dotnet run
+    ```
+
+   The API will start running locally at:
+
+   - **HTTP**: `http://localhost:5000`
+   - **HTTPS**: `https://localhost:5001`
+
+3. To view the Swagger UI, open your browser and navigate to:
+   - **Swagger UI**: `https://localhost:5001/swagger/index.html` (for HTTPS)
+
+   Swagger will allow you to interact with the API endpoints via a user-friendly interface.
+
+### Environment Variables
+
+If you want to configure different environments or settings, you can specify them in the `launchSettings.json` or use the following environment variables:
+- `ASPNETCORE_ENVIRONMENT=Development` for local development.
+- `ASPNETCORE_ENVIRONMENT=Production` for production (if applicable).
+
+## API Endpoints
+
+Below are the available endpoints for the API:
+
+### `POST /api/orders`
+Creates a new order.
+
+**Request Body**:
+```json
+{
+    "customerId": 1,
+    "product": "Laptop",
+    "quantity": 1,
+    "status": "Pending"
+}

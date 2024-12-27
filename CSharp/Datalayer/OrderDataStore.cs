@@ -1,9 +1,8 @@
-﻿using CSharp.Models;
+﻿using OrdersApi.Models;
 using System.Collections.Generic;
 using System.Linq;
-using CSharp.Models;
 
-namespace CSharp.Data
+namespace OrdersApi.Data
 {
     public class OrderDataStore : IOrderDataStore
     {
